@@ -1,14 +1,1 @@
-{
-    "users": [
-        {
-            "Name": "Bharath",
-            "Age": 22,
-            "Gender": "m",
-            "Disease": "Impetigo",
-            "Sympts": [
-                "yellow_crust_ooze",
-                "cough"
-            ]
-        }
-    ]
-}
+{"users": []}
