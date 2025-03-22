@@ -8,7 +8,8 @@ from spacy.lang.en.stop_words import STOP_WORDS
 import spacy
 import en_core_web_sm
 import joblib
-from flask import Flask, render_template, request, session
+from flask import Flask, render_template, request, session ,jsonify
+from flask_sqlalchemy import SQLAlchemy
 
 app = Flask(__name__)
 
@@ -41,6 +42,29 @@ for i in range(len(df_tr)):
     symp.append(df_tr.columns[df_tr.iloc[i] == 1].to_list())
     disease.append(df_tr.iloc[i, -1])
 
+
+# #database connection 
+
+
+app = Flask(__name__)
+
+# Replace 'your_username' and 'your_password' with your MySQL credentials
+app.config['SQLALCHEMY_DATABASE_URI'] = 'mysql+mysqlconnector://root:Bharath@localhost/medical_db'
+app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
+
+db = SQLAlchemy(app)
+
+# Define Patient Model (Matches the MySQL Table)
+class Patient(db.Model):
+    id = db.Column(db.Integer, primary_key=True)
+    name = db.Column(db.String(100), nullable=False)
+    age = db.Column(db.Integer, nullable=False)
+    gender = db.Column(db.String(10), nullable=False)
+    symptoms = db.Column(db.Text, nullable=False)
+
+# Create the Database Tables
+with app.app_context():
+    db.create_all()
 # # I- GET ALL SYMPTOMS
 
 all_symp_col = list(df_tr.columns[:-1])
