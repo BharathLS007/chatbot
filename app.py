@@ -42,7 +42,7 @@ for i in range(len(df_tr)):
     symp.append(df_tr.columns[df_tr.iloc[i] == 1].to_list())
     disease.append(df_tr.iloc[i, -1])
 
-
+####################################################            dont do anything in above         ###########################################################################################################
 # #database connection 
 
 
@@ -66,6 +66,7 @@ class patient_data(db.Model):
 with app.app_context():
     db.create_all()
 
+####################################################            dont do anything in below         ###########################################################################################################
 
     
 # # I- GET ALL SYMPTOMS
