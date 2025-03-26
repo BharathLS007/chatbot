@@ -10,7 +10,7 @@ import en_core_web_sm
 import joblib
 from flask import Flask, render_template, request, session ,jsonify
 from flask_sqlalchemy import SQLAlchemy
-
+import matplotlib.pyplot as plt
 app = Flask(__name__)
 
 nlp = spacy.load('en_core_web_sm')
@@ -65,6 +65,9 @@ class Patient(db.Model):
 # Create the Database Tables
 with app.app_context():
     db.create_all()
+
+
+    
 # # I- GET ALL SYMPTOMS
 
 all_symp_col = list(df_tr.columns[:-1])

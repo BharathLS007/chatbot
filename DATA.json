@@ -1,13 +1,13 @@
 {
     "users": [
         {
-            "Name": "Bharath",
-            "Age": 22,
-            "Gender": "Male",
+            "Name": "bada",
+            "Age": 133,
+            "Gender": "male",
             "Disease": "Impetigo",
             "Sympts": [
                 "yellow_crust_ooze",
-                "cough"
+                "yellow_crust_ooze"
             ]
         }
     ]
