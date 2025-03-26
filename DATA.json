@@ -1,14 +1,1 @@
-{
-    "users": [
-        {
-            "Name": "bada",
-            "Age": 133,
-            "Gender": "male",
-            "Disease": "Impetigo",
-            "Sympts": [
-                "yellow_crust_ooze",
-                "yellow_crust_ooze"
-            ]
-        }
-    ]
-}
+{"users": []}

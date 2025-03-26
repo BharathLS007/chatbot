@@ -49,13 +49,13 @@ for i in range(len(df_tr)):
 app = Flask(__name__)
 
 # Replace 'your_username' and 'your_password' with your MySQL credentials
-app.config['SQLALCHEMY_DATABASE_URI'] = 'mysql+mysqlconnector://root:Bharath@localhost/medical_db'
+app.config['SQLALCHEMY_DATABASE_URI'] = 'mysql+mysqlconnector://root:Bharath@localhost/medical'
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 
 db = SQLAlchemy(app)
 
-# Define Patient Model (Matches the MySQL Table)
-class Patient(db.Model):
+# Define patient_data Model (Matches the MySQL Table)
+class patient_data(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     name = db.Column(db.String(100), nullable=False)
     age = db.Column(db.Integer, nullable=False)
